@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body style="min-height: 2000px;">
+    <div class="container mt-5">
+        <h1 class="text-center">Google Form test</h1>
+        <form action="javascript:GoForm();" class="needs-validation" novalidate>
+            <div>
+                <label for="name" class="form-lable">Name</label>
+                <input type="text" name="name" id="name" class="form-control mb-4" required>
+                <div class="valid-feedback">姓名驗證成功！</div>
+                <div class="invalid-feedback">姓名驗證失敗！</div>
+            </div>
+            <div>
+                <label for="tel" class="form-lable">Tel</label>
+                <input type="text" name="tel" id="tel" class="form-control mb-4"pattern="[0-9]{10}" required>
+                <div class="valid-feedback">電話驗證成功！</div>
+                <div class="invalid-feedback">電話驗證失敗！</div>
+            </div>
+            <input type="submit" value="送出" class="btn btn-primary mb-4">
+        </form>
+        <div class="row">
+            <div class="col-12 text-center"></div>
+            <h1>結帳</h1>
+            <p></p>
+            <!-- <div class="col-12 col-md-4 bg-danger order-md-last"></div> -->
+            <div class="col-12 col-md-4 order-md-last">
+                <h4 class="d-flex justify-content-between">
+                    <span class="text-primary">購物車</span>
+                    <span class="badge bg-primary text-white">2</span>
+                </h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <h6 class="mb-0">Tesla Model X</h6>
+                        <span>$300</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <h6>BMW M3</h6>
+                        <span>$400</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="col-12 col-md-8 bg-primary"></div> -->
+            <div class="col-12 col-md-8">
+                <h4>結帳資料</h4>
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="名字">
+                            <label for="firstname">名字</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="姓氏">
+                            <label for="lastname">姓氏</label>
+                        </div>
+                        <!-- <label for="lastname" class="form-label">姓氏</label>
+                        <input type="text" name="lastname" id="lastname" class="form-control"> -->
+                    </div>
+                </div>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control mb-4">
+                <label for="tel" class="form-label">電話</label>
+                <input type="tel" name="tel" id="tel" class="form-control mb-4">
+                <P>性別</P>
+                <div class="form-check form-check-inline mb-4">
+                    <input type="radio" name="SEX" id="male">
+                    <label for="male" class="form-check-lable">男</label>
+                </div>
+                <div class="form-check form-check-inline mb-4">
+                    <input type="radio" name="SEX" id="female">
+                    <label for="female" class="form-check-lable">女</label>
+                </div>
+                <p>可收貨的時段</p>
+                <div class="form-check form-check-inline mb-4">
+                    <input type="checkbox" name="morning" id="morning" class="form-check-input">
+                    <label for="morning" class="form-check-lable">早上</label>
+                </div>
+                <div class="form-check form-check-inline mb-4">
+                    <input type="checkbox" name="afternoon" id="afternoon" class="form-check-input">
+                    <label for="afternoon" class="form-check-lable">下午</label>
+                </div>
+                <div class="form-check form-check-inline mb-4">
+                    <input type="checkbox" name="evening" id="evening" class="form-check-input">
+                    <label for="evening" class="form-check-lable">晚上</label>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <label for="add" class="form-label">地址</label>
+                    </div>
+                    <div class="col-3">
+                        <select name="add" id="add" class="form-select">
+                            <option value="tpc">臺北市</option>
+                            <option value="ntp">新北市</option>
+                            <option value="tyc">桃園市</option>
+                        </select>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" name="street" id="street" class="form-control" placeholder="請輸入街道">
+                    </div>
+                </div>
+                <input type="submit" value="進行結帳" class="btn btn-primary btn-lg w-100">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-betal/dist/js/bootstrap.bundle.min.js">
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqkitiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            function GoForm() { //這裡要對應到自己的 javascript 名稱
+            //宣告欄位
+            var field1 = $("[name='name']").val();
+            var field2 = $("[name='tel']").val();
+            $.ajax({
+                url: "", //Google Form 裡面的 form action 網址 ＊＊記得要填＊＊
+                data: { //Google Form 裡面的欄位 name="entry." 複製"entry...."＊＊記得要改＊＊
+                    "entry.": field1,
+                    "entry.": field2,
+                },
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function () {
+                        alert("已送出!"); //完成送出表單的警告視窗
+                    },
+                    200: function () {
+                        alert("已送出!"); //完成送出表單的警告視窗
+                    }
+                }
+            });
+            console.log(field1,field2);
+        }
+        </script>
+        <script>
+            (function () {
+                'use strict'
+                
+                var forms = document.querySelectorAll('.needs-validation')
+                
+                Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            })()
+        </script>
+</body>
+</html>
